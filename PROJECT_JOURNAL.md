@@ -7947,3 +7947,28 @@ The public GitHub repository exists but is empty. The 296-path staged index
 requires user review before an initial commit/push. Step 5.17 remains next
 in the numbered Build Plan; Phase 5 is 16/20 and overall 121/125. No provider
 call, commit, tag, push, or file deletion occurred.
+
+# Entry 149 — Local publication commit; GitHub sign-in pending
+**Date / Build hour:** September 16, 2026 / Build hour 18
+**Stage:** Supplemental publication setup; numbered progress unchanged
+
+**Work performed:**
+- With the user's publication approval, configured only this repository's Git
+  author email as GitHub's account-specific no-reply address
+  (`317698177+gaurav-k-asthana@users.noreply.github.com`). The global Git
+  identity was not changed.
+- Added the user-created empty public repository as `origin` and committed the
+  previously reviewed 296-file staged set on `main` as `9692dc5`
+  (`Publish RFP orchestrator source and draft report`).
+- Attempted to push. The noninteractive push stopped before uploading because
+  this terminal has no stored GitHub HTTPS credentials. No token was requested
+  or shared. The public repository remains empty until VS Code/GitHub browser
+  authentication succeeds and `main` is pushed.
+
+**Verification and next step:**
+The working tree is clean, `origin` points to
+`https://github.com/gaurav-k-asthana/enterprise-rfp-response-orchestrator.git`,
+and the local commit uses the no-reply email. Sign in to GitHub for VS Code's
+built-in Git support, push `main` to the existing `origin`, then verify the
+public repository before using its link for submission. Steps 5.17-5.19
+remain open; no provider call or file deletion occurred.
