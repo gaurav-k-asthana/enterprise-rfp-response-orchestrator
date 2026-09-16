@@ -1,0 +1,16 @@
+{
+  "analysis_json_path": "outputs/evaluation/tradeoff_analysis_smoke_step_4_18.json",
+  "analysis_json_sha256": "4e8acb7db1f6c637c9ed1dc53fd986541f2fd944156dfcd4bd340a92586a6c0f",
+  "analysis_markdown_path": "outputs/evaluation/tradeoff_analysis_smoke_step_4_18.md",
+  "analysis_markdown_sha256": "0f8d57fa2a106cce9796d51bd63ee486aaa1ea59cfc64402d26ea521875dd528",
+  "approval_id": "northstar-rfp-tradeoff-analysis-step-4-18-approval",
+  "approved_at": "2026-09-14T16:56:02-04:00",
+  "approved_by": "Gaurav Asthana",
+  "comparative_winner_approved": null,
+  "decision": "APPROVED",
+  "format_version": 1,
+  "phase_4_exit_gate_passed": false,
+  "provider_calls_made": 0,
+  "scope": "SMOKE_ONLY",
+  "universal_multi_agent_superiority_claim_approved": false
+}

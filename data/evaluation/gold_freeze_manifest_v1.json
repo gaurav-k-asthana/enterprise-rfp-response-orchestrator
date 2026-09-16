@@ -1,0 +1,28 @@
+{
+  "case_count": 24,
+  "dataset_id": "northstar-rfp-evaluation-v1",
+  "dataset_status": "FROZEN",
+  "draft_dataset_sha256": "a9b87391119511ef175d49068e1bf6d22c2e0efc9964bb9af67fb3151631381a",
+  "frozen_dataset_sha256": "2debbe188b735ea7eddde3fc7c4008d92e1e920d421e70e2419d6106cf4eae2e",
+  "gold_content_sha256": "887d73bcc2e56ec003d0c73da8fcc5b40d5e5e194d11f6c00621d5e16ce7e606",
+  "known_implementation_gaps": [
+    "RFP-006 currently exhausts deterministic retrieval before reaching the expected roadmap-authority gate.",
+    "RFP-015 currently surfaces the security exception but not the second expected retention conflict.",
+    "Some evidence-gap and pre-retrieval checkpoints currently enable more UI actions than the gold safety contract permits."
+  ],
+  "manifest_version": "1.0",
+  "matrix_sha256": {
+    "claim_matrix_v1.md": "8986521ee402c6da1e65f2d12a0bb3244d8f644fddcab15df398683c98bbeb40",
+    "coverage_matrix_v1.md": "58a584958cb0bd6508cd8cca55dce7f20a7764eea776ef6ae2b11ffab3a58032",
+    "evidence_matrix_v1.md": "262841422793273554f97830003ab68c97bcbd0ef0ba75178eca3412aa8f5379",
+    "routing_matrix_v1.md": "a2f40a8ea08391935c9caf818204ba2bce039c2ecfb6bf64e2e247352ce6cf72",
+    "safety_matrix_v1.md": "b5e10586332183c0efcc08dcfb8fe2da2e4aa99eb44d03a7188ed9cf1cd33f54"
+  },
+  "review": {
+    "notes": "Approved by the user in Codex after reviewing the Step 4.7 gold review packet.",
+    "reviewed_at": "2026-09-03T22:01:47-04:00",
+    "reviewer": "Gaurav Asthana",
+    "status": "APPROVED"
+  },
+  "review_packet_sha256": "d8fe02be43015fe7694377aa0dca655f7f3fad20d8d0b64fb1fd4d9a722950e6"
+}

@@ -1,0 +1,82 @@
+{
+  "schema_version": "1.0",
+  "status": "FROZEN",
+  "frozen_on": "2026-09-16",
+  "execution_mode": "offline_synthetic",
+  "source_sha256": {
+    "data/sample_rfp.md": "5265b465ff6d5d86398979acee8917c037127527fc015e8c07abf60de77eca67",
+    "data/evaluation/evaluation_cases_v1.json": "2debbe188b735ea7eddde3fc7c4008d92e1e920d421e70e2419d6106cf4eae2e"
+  },
+  "cases": [
+    {
+      "path": "simple",
+      "case_id": "EVAL-001",
+      "requirement_id": "RFP-001",
+      "requirement_text": "Confirm support for SAML 2.0 and SCIM 2.0.",
+      "expected_strategy_family": "SINGLE_SPECIALIST",
+      "expected_specialists": ["product"],
+      "expected_terminal_strategy": "SINGLE_SPECIALIST",
+      "expected_status": "FINALIZED",
+      "expected_retries": 0,
+      "expected_conflict_reanalyses": 0,
+      "expected_review_reason": null,
+      "expected_final_answer": true
+    },
+    {
+      "path": "cross_domain",
+      "case_id": "EVAL-002",
+      "requirement_id": "RFP-002",
+      "requirement_text": "Describe customer-managed encryption keys and identify supported deployment environments.",
+      "expected_strategy_family": "PARALLEL_SPECIALISTS",
+      "expected_specialists": ["product", "security"],
+      "expected_terminal_strategy": "PARALLEL_SPECIALISTS",
+      "expected_status": "FINALIZED",
+      "expected_retries": 0,
+      "expected_conflict_reanalyses": 0,
+      "expected_review_reason": null,
+      "expected_final_answer": true
+    },
+    {
+      "path": "recovery",
+      "case_id": "EVAL-021",
+      "requirement_id": "RFP-021",
+      "requirement_text": "Confirm that Northstar is authorized for FedRAMP High.",
+      "expected_strategy_family": "SINGLE_SPECIALIST",
+      "expected_specialists": ["security"],
+      "expected_terminal_strategy": "IMMEDIATE_HITL",
+      "expected_status": "NEEDS_HUMAN",
+      "expected_retries": 2,
+      "expected_conflict_reanalyses": 0,
+      "expected_review_reason": "RETRY_BUDGET_EXHAUSTED",
+      "expected_final_answer": false
+    },
+    {
+      "path": "contradiction",
+      "case_id": "EVAL-014",
+      "requirement_id": "RFP-014",
+      "requirement_text": "State exactly how many calendar days customer content is retained after contract termination.",
+      "expected_strategy_family": "SINGLE_SPECIALIST",
+      "expected_specialists": ["security"],
+      "expected_terminal_strategy": "IMMEDIATE_HITL",
+      "expected_status": "NEEDS_HUMAN",
+      "expected_retries": 0,
+      "expected_conflict_reanalyses": 1,
+      "expected_review_reason": "UNRESOLVED_CONFLICT",
+      "expected_final_answer": false
+    },
+    {
+      "path": "authority_risk",
+      "case_id": "EVAL-005",
+      "requirement_id": "RFP-005",
+      "requirement_text": "Commit to a 99.99% uptime SLA with service credits.",
+      "expected_strategy_family": "SINGLE_SPECIALIST",
+      "expected_specialists": ["product"],
+      "expected_terminal_strategy": "IMMEDIATE_HITL",
+      "expected_status": "NEEDS_HUMAN",
+      "expected_retries": 0,
+      "expected_conflict_reanalyses": 0,
+      "expected_review_reason": "ORGANIZATIONAL_AUTHORITY",
+      "expected_final_answer": false
+    }
+  ]
+}

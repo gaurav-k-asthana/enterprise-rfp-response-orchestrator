@@ -1,0 +1,28 @@
+{
+  "approval_id": "northstar-rfp-repeat-trials-v1-approval",
+  "approved_at": "2026-09-14T16:04:35-04:00",
+  "approved_by": "Gaurav Asthana",
+  "authorized_cost_usd": 5.12,
+  "budget_authorized": true,
+  "comparative_runs_completed": 0,
+  "currency": "USD",
+  "format_version": 1,
+  "implementation_review_required": true,
+  "max_provider_calls_total": 128,
+  "max_total_architecture_execution_count": 64,
+  "max_total_input_tokens": 1024000,
+  "max_total_output_tokens": 256000,
+  "paid_command_approved": false,
+  "plan_id": "northstar-rfp-repeat-trials-v1",
+  "proposal_path": "data/evaluation/repeat_trial_plan_v1.json",
+  "proposal_sha256": "77acb469316289d92871d8450d35f7975d5b2cddbead1f6a81f710b6a5f88b2a",
+  "provider_calls_made": 0,
+  "repeat_case_ids": [
+    "EVAL-001",
+    "EVAL-002",
+    "EVAL-015",
+    "EVAL-021"
+  ],
+  "status": "APPROVED",
+  "total_trials_per_selected_case": 3
+}

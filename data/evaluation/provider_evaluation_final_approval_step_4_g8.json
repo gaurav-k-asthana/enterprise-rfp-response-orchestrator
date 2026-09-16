@@ -1,0 +1,20 @@
+{
+  "analysis_json_path": "outputs/evaluation/provider_evaluation_final_step_4_g8.json",
+  "analysis_json_sha256": "84edc4919789043e30dc6c78b672475627c5906f515af238faf78ac4bb61bca8",
+  "analysis_markdown_path": "outputs/evaluation/provider_evaluation_final_step_4_g8.md",
+  "analysis_markdown_sha256": "fd2e20fa430248463c3267f29c5cde663cc8230c9b5cb7ffbd31a77faf2f9a08",
+  "analysis_scope": "FROZEN_V1_PRIMARY_WITH_BUDGET_CENSORED_REPEATS",
+  "approval_id": "northstar-provider-final-evaluation-step-4-g8-approval-v1",
+  "approved_at": "2026-09-15T11:30:28-04:00",
+  "approved_by": "Gaurav Asthana",
+  "bounded_preference": "single_generalist_for_frozen_v1",
+  "decision": "APPROVED",
+  "explicit_limitations_approved": true,
+  "format_version": 1,
+  "phase_4_exit_gate_passed": true,
+  "preserved_failure_treatment_approved": true,
+  "production_readiness_claim_approved": false,
+  "provider_calls_made_to_record_approval": 0,
+  "repeat_censoring_warning_approved": true,
+  "universal_multi_agent_superiority_claim_approved": false
+}

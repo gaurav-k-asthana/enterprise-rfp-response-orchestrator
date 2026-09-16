@@ -1,0 +1,145 @@
+{
+  "bindings": [
+    {
+      "architecture": "single_generalist",
+      "architecture_specific_bypass_allowed": false,
+      "policy_id": "northstar-rfp-shared-safety-v1",
+      "post_evidence_engine": "risk_authority.assess_risk_authority_input",
+      "preflight_callable": "risk_authority.assess_preflight_safety"
+    },
+    {
+      "architecture": "orchestrated_peer_specialists",
+      "architecture_specific_bypass_allowed": false,
+      "policy_id": "northstar-rfp-shared-safety-v1",
+      "post_evidence_engine": "risk_authority.assess_risk_authority_input",
+      "preflight_callable": "risk_authority.assess_preflight_safety"
+    }
+  ],
+  "comparison_id": "northstar-rfp-fair-comparison-v1",
+  "fair_comparison_artifact_sha256": "0287548e4113a9afb2f1b5eb1c9b59553621da8b97a77075349a7a61e766c807",
+  "format_version": 1,
+  "frozen_at": "2026-09-03T23:22:25-04:00",
+  "policy_id": "northstar-rfp-shared-safety-v1",
+  "post_evidence": {
+    "affirmative_unsupported_action": "NEEDS_HUMAN",
+    "exhausted_recovery_action": "NEEDS_HUMAN",
+    "incomplete_unclassified_facts_action": "FAIL_CLOSED",
+    "multi_contributor_conflict_adds_specialist_disagreement": true,
+    "no_risk_and_all_checks_pass_action": "CLEAR",
+    "required_clear_checks": [
+      "citation_valid",
+      "source_metadata_valid",
+      "claim_support_valid",
+      "commitment_consistent",
+      "recovery_not_exhausted",
+      "conflict_resolved"
+    ],
+    "unresolved_conflict_action": "NEEDS_HUMAN"
+  },
+  "preflight": {
+    "immediate_authority_risks": [
+      "PRICING_OR_DISCOUNT",
+      "WARRANTY_OR_INDEMNITY"
+    ],
+    "other_initial_risks_continue_to_evidence": true,
+    "prompt_injection_action": "NEEDS_HUMAN_BEFORE_RETRIEVAL",
+    "prompt_injection_bypass_allowed": false
+  },
+  "risk_rules": [
+    {
+      "authority_owners": [
+        "PROPOSAL_REVIEWER"
+      ],
+      "evaluation_stage": "post_evidence",
+      "reason": "An affirmative response is not supported by every atomic claim.",
+      "risk_class": "UNSUPPORTED_CATEGORICAL_YES"
+    },
+    {
+      "authority_owners": [
+        "PRODUCT_OWNER"
+      ],
+      "evaluation_stage": "post_evidence",
+      "reason": "A roadmap date or delivery promise requires Product-owner approval.",
+      "risk_class": "ROADMAP_COMMITMENT"
+    },
+    {
+      "authority_owners": [
+        "COMMERCIAL_LEGAL"
+      ],
+      "evaluation_stage": "preflight_and_post_evidence",
+      "reason": "Pricing or discount terms require Commercial or Legal approval.",
+      "risk_class": "PRICING_OR_DISCOUNT"
+    },
+    {
+      "authority_owners": [
+        "COMMERCIAL_LEGAL"
+      ],
+      "evaluation_stage": "post_evidence",
+      "reason": "A new uptime SLA or service-credit commitment requires Commercial and Legal approval.",
+      "risk_class": "SLA_OR_SERVICE_CREDIT"
+    },
+    {
+      "authority_owners": [
+        "COMMERCIAL_LEGAL"
+      ],
+      "evaluation_stage": "preflight_and_post_evidence",
+      "reason": "Warranty or indemnity terms require Commercial or Legal approval.",
+      "risk_class": "WARRANTY_OR_INDEMNITY"
+    },
+    {
+      "authority_owners": [
+        "SECURITY_LEGAL"
+      ],
+      "evaluation_stage": "post_evidence",
+      "reason": "A security exception or unverified assurance requires Security and Legal approval.",
+      "risk_class": "SECURITY_EXCEPTION"
+    },
+    {
+      "authority_owners": [
+        "SECURITY_LEGAL"
+      ],
+      "evaluation_stage": "post_evidence",
+      "reason": "A material data-residency ambiguity requires Security and Legal review.",
+      "risk_class": "DATA_RESIDENCY_AMBIGUITY"
+    },
+    {
+      "authority_owners": [
+        "PROPOSAL_REVIEWER"
+      ],
+      "evaluation_stage": "post_evidence",
+      "reason": "Conflicting evidence must be presented for human review.",
+      "risk_class": "CONFLICTING_EVIDENCE"
+    },
+    {
+      "authority_owners": [
+        "PROPOSAL_REVIEWER"
+      ],
+      "evaluation_stage": "post_evidence",
+      "reason": "Peer specialists disagree on a material current proposal.",
+      "risk_class": "SPECIALIST_DISAGREEMENT"
+    },
+    {
+      "authority_owners": [
+        "PROPOSAL_REVIEWER"
+      ],
+      "evaluation_stage": "post_evidence",
+      "reason": "The bounded evidence-recovery budget is exhausted.",
+      "risk_class": "RETRY_BUDGET_EXHAUSTED"
+    }
+  ],
+  "shared_policy_sha256": "b309f605ace075e9c115ce255ef1b6eb33aaa87779944f475544e2d0c21e4237",
+  "source_sha256": {
+    "src/rfp_orchestrator/comparison_safety.py": "2e1809d8ccda950c3841f250c1d59eb8af66c09ad2800a27ff6efb0a91b99635",
+    "src/rfp_orchestrator/orchestrator.py": "0427dcb3351910fa039833c8e098e69927b3f8b185f06fda7d1718b610f595b1",
+    "src/rfp_orchestrator/risk_authority.py": "adcdcd1122f696559d0aeb6b0344fa7e369c5c4b28fc315f5ed8a245079c4974"
+  },
+  "status": "FROZEN",
+  "verification": {
+    "architecture_specific_bypass_allowed": false,
+    "comparative_cases_run": 0,
+    "network_calls_made": 0,
+    "risk_class_count": 10,
+    "same_post_evidence_engine": true,
+    "same_preflight_policy": true
+  }
+}

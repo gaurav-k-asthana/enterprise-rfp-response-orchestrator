@@ -1,0 +1,140 @@
+{
+  "additional_repeat_architecture_execution_count": 16,
+  "additional_repeat_count": 2,
+  "approval_required": true,
+  "approved_at": null,
+  "approved_by": null,
+  "architectures": [
+    "single_generalist",
+    "orchestrated_peer_specialists"
+  ],
+  "budget": {
+    "automatic_provider_retries_allowed": false,
+    "currency": "USD",
+    "currently_authorized_cost_usd": 0.0,
+    "input_usd_per_million_tokens": 2.0,
+    "max_input_tokens_per_provider_call": 8000,
+    "max_output_tokens_per_provider_call": 2000,
+    "max_provider_calls_per_architecture_execution": 3,
+    "max_provider_calls_total": 128,
+    "max_total_input_tokens": 1024000,
+    "max_total_output_tokens": 256000,
+    "output_usd_per_million_tokens": 12.0,
+    "pricing_snapshot_id": "openai-gpt-5.6-terra-standard-text-2026-09-12",
+    "pricing_snapshot_sha256": "6b958fd8a9989419122913c4372e24112e35e14794b7d73d8d463a112b8bbee9",
+    "proposed_hard_cost_cap_usd": 5.12,
+    "stop_before_next_call_when_cap_would_be_exceeded": true
+  },
+  "comparative_runs_completed": 0,
+  "excluded_deterministic_stop_case_ids": [
+    "EVAL-023",
+    "EVAL-024"
+  ],
+  "fair_comparison_sha256": "0287548e4113a9afb2f1b5eb1c9b59553621da8b97a77075349a7a61e766c807",
+  "format_version": 1,
+  "frozen_dataset_sha256": "2debbe188b735ea7eddde3fc7c4008d92e1e920d421e70e2419d6106cf4eae2e",
+  "max_total_architecture_execution_count": 64,
+  "plan_id": "northstar-rfp-repeat-trials-v1",
+  "prepared_at": "2026-09-14T12:00:00-04:00",
+  "primary_architecture_execution_count": 48,
+  "primary_case_ids": [
+    "EVAL-001",
+    "EVAL-002",
+    "EVAL-003",
+    "EVAL-004",
+    "EVAL-005",
+    "EVAL-006",
+    "EVAL-007",
+    "EVAL-008",
+    "EVAL-009",
+    "EVAL-010",
+    "EVAL-011",
+    "EVAL-012",
+    "EVAL-013",
+    "EVAL-014",
+    "EVAL-015",
+    "EVAL-016",
+    "EVAL-017",
+    "EVAL-018",
+    "EVAL-019",
+    "EVAL-020",
+    "EVAL-021",
+    "EVAL-022",
+    "EVAL-023",
+    "EVAL-024"
+  ],
+  "provider_calls_made": 0,
+  "provider_execution_authorized": false,
+  "repeat_cases": [
+    {
+      "additional_trial_numbers": [
+        2,
+        3
+      ],
+      "case_families": [
+        "SIMPLE"
+      ],
+      "case_id": "EVAL-001",
+      "primary_trial_number": 1,
+      "rationale": "Simple directly supported Product case used as a low-complexity stability control.",
+      "requirement_id": "RFP-001",
+      "variability_dimensions": [
+        "SIMPLE_STABILITY_CONTROL"
+      ]
+    },
+    {
+      "additional_trial_numbers": [
+        2,
+        3
+      ],
+      "case_families": [
+        "CROSS_DOMAIN"
+      ],
+      "case_id": "EVAL-002",
+      "primary_trial_number": 1,
+      "rationale": "Cross-domain case where variable tool selection or peer synthesis could change coverage.",
+      "requirement_id": "RFP-002",
+      "variability_dimensions": [
+        "ROUTING_AND_TOOL_SELECTION"
+      ]
+    },
+    {
+      "additional_trial_numbers": [
+        2,
+        3
+      ],
+      "case_families": [
+        "WEAK_EVIDENCE",
+        "CONFLICT",
+        "AUTHORITY_RISK",
+        "ADVERSARIAL"
+      ],
+      "case_id": "EVAL-015",
+      "primary_trial_number": 1,
+      "rationale": "Combined weak-evidence, conflict, authority, and adversarial case where safe escalation must remain stable.",
+      "requirement_id": "RFP-015",
+      "variability_dimensions": [
+        "CONFLICT_AND_AUTHORITY_ESCALATION"
+      ]
+    },
+    {
+      "additional_trial_numbers": [
+        2,
+        3
+      ],
+      "case_families": [
+        "WEAK_EVIDENCE"
+      ],
+      "case_id": "EVAL-021",
+      "primary_trial_number": 1,
+      "rationale": "Absent direct evidence tests whether unsupported assurance and bounded recovery remain stable.",
+      "requirement_id": "RFP-021",
+      "variability_dimensions": [
+        "EVIDENCE_GAP_AND_BOUNDED_RECOVERY"
+      ]
+    }
+  ],
+  "shared_safety_policy_sha256": "8ef20e0ff301992d65dad9430ad4654a1ae0cb274f3a1d0f90fb31190afe4b34",
+  "status": "AWAITING_APPROVAL",
+  "total_trials_per_selected_case": 3
+}

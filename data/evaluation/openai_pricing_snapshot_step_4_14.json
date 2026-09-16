@@ -1,0 +1,17 @@
+{
+  "billing_unit_tokens": 1000000,
+  "cache_accounting": "The normalized V1 usage record does not separate cached input tokens, so all observed input tokens use the standard input rate.",
+  "cached_input_usd_per_unit": 0.2,
+  "checked_at": "2026-09-12",
+  "currency": "USD",
+  "estimate_assumption": "Use standard uncached text-token rates for the frozen GPT-5.6 Terra model. The output is an estimate, not an invoice.",
+  "format_version": 1,
+  "input_usd_per_unit": 2.0,
+  "long_context_accounting": "The small synthetic evaluation is designed to remain below the published long-context threshold; per-request long-context token detail is not present in the normalized V1 usage record.",
+  "model": "gpt-5.6-terra",
+  "output_usd_per_unit": 12.0,
+  "pricing_snapshot_id": "openai-gpt-5.6-terra-standard-text-2026-09-12",
+  "provider": "OpenAI API",
+  "source_title": "GPT-5.6 Terra Model | OpenAI API",
+  "source_url": "https://developers.openai.com/api/docs/models/gpt-5.6-terra"
+}
