@@ -8000,3 +8000,65 @@ The public source link is now usable:
 `https://github.com/gaurav-k-asthana/enterprise-rfp-response-orchestrator`.
 Step 5.17 remains the next numbered Build Plan step; Steps 5.17-5.19 remain
 open, so this publication is not the final release freeze or tag.
+
+# Entry 151 - Steps 5.17-5.20 final verification, evidence audit, and release
+**Date / Build hour:** September 22, 2026 / Build hour 18
+**Stage:** Phase 5 completion and required V1 project closure
+
+**Objective:**
+Complete every remaining required build step without expanding scope into the
+explicitly excluded post-submission architecture simplification analysis.
+
+**Step 5.17 - final verification:**
+- Regenerated the approved final evaluation JSON/Markdown, primary metrics,
+  Safe Completion, efficiency, pricing, and comparison tables from the saved
+  raw archives. The final analysis hashes remained
+  `84edc4919789043e30dc6c78b672475627c5906f515af238faf78ac4bb61bca8`
+  (JSON) and
+  `fd2e20fa430248463c3267f29c5cde663cc8230c9b5cb7ffbd31a77faf2f9a08`
+  (Markdown). No provider call was made.
+- Rebuilt the five-case DOCX QA set. The reviewed files retained their
+  original hashes. The check exposed a false drift signal caused only by ZIP
+  member timestamps; `scripts/build_step_5_11_qa.py` now compares logical
+  package members and preserves reviewed bytes. Regression tests prove equal
+  content with different ZIP timestamps is accepted while changed content is
+  rejected.
+- Started a fresh Streamlit server on local port 8505, received HTTP 200, and
+  stopped that process cleanly. Ruff passed and `pip check` reported no broken
+  requirements. The release check initially passed 1,309 tests; after adding
+  the evidence/manifest tests, the final suite passed 1,312 tests.
+
+**Step 5.18 - evidence-to-claim audit:**
+- Added `docs/final_claim_audit_v1.md`, comparing material README, metrics,
+  and report claims with implementation, tests, the frozen gold set, the
+  approval record, and locally retained raw/derived results. SHA-256:
+  `c1751853d087e396a489c51aae8aaa0d379498c3cfe8f8db09bc7bde62d74e44`.
+- The audit verified the peer topology, retrieval contracts, support-status
+  aggregation, bounded recovery/reanalysis, HITL stops, live map/DOCX paths,
+  24-case results, 64-execution/19-failure accounting, censored repeats, and
+  generation-cost estimate. It preserved every major limitation and rejected
+  universal architecture-superiority and production-readiness claims.
+- Updated the report from submission draft to final reviewed V1 release while
+  leaving approved metrics and limitations unchanged. Regenerated all 11
+  pages, rendered every page through PDFKit, and visually checked headings,
+  tables, figures, spacing, footers, and glyphs. Final PDF SHA-256:
+  `33aae064383a5d74ed076a4ea946b854c50557c5e1a5c0137cd4a7eb9d78d878`.
+
+**Steps 5.19-5.20 - release freeze and closure:**
+- Added `docs/release_manifest_v0.1.0.json` to bind the submission artifacts,
+  final checks, reviewed evaluation hashes, and interpretation boundaries.
+  SHA-256:
+  `6e369572f7bae1c09dcf965715beb232da8a344e506f102fbce533a4129ad729`.
+- Repeated the real staged-path review, ignore checks, diff check, and bounded
+  key/private-key pattern scan before the final commit. The frozen release is
+  the final journal/status commit plus annotated tag `v0.1.0`; the tag and
+  `main` are pushed to the existing public `origin` immediately after this
+  entry is committed.
+- Closed Phase 5 at 20/20 and the canonical plan at 125/125. The optional
+  user-owned recording is not a source-release dependency. No architecture
+  simplification analysis was performed or added.
+
+**Final status:**
+The required synthetic V1 source and report package is complete and ready for
+submission. Known prototype gaps remain disclosed; no real-data or production
+authorization is implied.

@@ -1,4 +1,4 @@
-"""Build the submission-draft RFP project report as a self-contained PDF.
+"""Build the final reviewed RFP project report as a self-contained PDF.
 
 This intentionally uses only the standard library and Pillow because the
 local Mac lacks reportlab/Poppler and package-network access. It makes no
@@ -388,8 +388,8 @@ def build_report() -> Report:
     p.text(LEFT, 708, "Enterprise RFP Response", 22, "bold", NAVY)
     p.text(LEFT, 682, "Orchestrator", 22, "bold", NAVY)
     p.text(LEFT, 653, "Agentic AI project report  |  Week 3 enterprise RFP use case", 9.2, "bold")
-    p.text(LEFT, 633, "Prepared by Gaurav Asthana  |  September 16, 2026", 8.9)
-    p.text(LEFT, 617, "Status: submission draft; final Step 5.17-5.19 checks are pending", 8.7, "italic", GRAY)
+    p.text(LEFT, 633, "Prepared by Gaurav Asthana  |  Finalized September 22, 2026", 8.9)
+    p.text(LEFT, 617, "Status: final reviewed V1 release  |  tag v0.1.0", 8.7, "italic", GRAY)
     p.y = 595
     r.note("Safety notice: This is a synthetic Northstar Cloud Systems prototype. It produces reviewable draft responses, not authorized legal, commercial, security-exception, roadmap, SLA, or customer-specific contractual commitments.")
     r.sub("", "Executive summary")
@@ -578,11 +578,11 @@ def build_report() -> Report:
         [134, 354],
         size=7.75,
     )
-    r.para("At report time, Build Plan Steps 5.17-5.19 remain open: final full regression/regeneration/startup checks, public-claim audit, and a reviewed local release freeze. The Git CLI is blocked by this Mac's Xcode-license/tool mismatch, so the real staged-file check and release identifier are also pending. This PDF is a submission draft until those gates and the user-owned demo recording are completed. [1, 8]")
+    r.para("The final release checks passed on September 22, 2026: 1,309 tests, Ruff, dependency integrity, deterministic evaluation regeneration, all five reviewed DOCX packages, and a fresh Streamlit HTTP 200 startup. The public claims were then checked against saved evidence and raw local results before the reviewed source state was frozen as tag v0.1.0. The optional user-owned recording is not part of the source release. [1, 5, 8, 10]")
 
     r.section("14", "Conclusion and next actions")
     r.para("The project demonstrates an inspectable agentic control-flow system: selective peer specialists, evidence gates, bounded recovery, consistency and authority checks, checkpointed human review, a live execution map, and DOCX export. Its strongest portfolio lesson is disciplined measurement rather than an asserted multi-agent win. The single generalist was safer on the frozen synthetic primary set; the orchestrated design exposed important implementation and budget costs. [1, 5, 6]")
-    r.para("Before submission, complete the planned offline Step 5.17 verification, Step 5.18 evidence-to-claim audit, and Step 5.19 local release review; then record the credential-safe five-minute demo and submit only reviewed artifacts. Future technical work should address the known RFP-006/RFP-015 and reviewer-action gaps, durable and authorized review, larger synthetic or permissioned corpora, and an independently budgeted evaluation. The excluded post-submission simplification exercise is not part of this project. [1, 7, 8]")
+    r.para("The reviewed V1 source, report, metrics page, evidence audit, and demo guide are ready for submission. A credential-safe user-owned recording can be added separately without changing the release claims. Future technical work should address the known RFP-006/RFP-015 and reviewer-action gaps, durable and authorized review, larger synthetic or permissioned corpora, and an independently budgeted evaluation. The excluded post-submission simplification exercise is not part of this project. [1, 7, 8, 10]")
 
     r.section("Appendix A", "Assignment requirement map")
     r.table(
@@ -610,6 +610,7 @@ def build_report() -> Report:
         ("[7]", "data/fixtures/demo_cases_v1.md - first-run demo expectations"),
         ("[8]", "planning/BUILD_PLAN.md and PROJECT_JOURNAL.md - decisions, approvals, and status"),
         ("[9]", "docs/architecture_execution_rfp002.md - actual map capture provenance"),
+        ("[10]", "docs/final_claim_audit_v1.md - final public claim-to-evidence review"),
     ):
         r.bullet(f"{label} {location}", size=8.2)
     r.para("All reported comparison numbers refer to the approved primary 24-case synthetic set unless labeled otherwise. Failed executions remain in denominators. Repeat-set variability is inconclusive. Observed cost and latency are not complete operating-cost estimates. The immutable final-analysis Markdown retains its pre-approval status line; the separate approval record is authoritative for the human decision. [4-6]", size=8.6)

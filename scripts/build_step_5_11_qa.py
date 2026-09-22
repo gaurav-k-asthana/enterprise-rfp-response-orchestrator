@@ -4,7 +4,9 @@ from __future__ import annotations
 
 import hashlib
 import json
+from io import BytesIO
 from pathlib import Path
+from zipfile import ZipFile
 
 from rfp_orchestrator.sample_requirements import load_sample_requirements
 from rfp_orchestrator.ui import build_docx_download, run_sample_requirement
@@ -12,6 +14,20 @@ from rfp_orchestrator.ui import build_docx_download, run_sample_requirement
 ROOT = Path(__file__).resolve().parents[1]
 MANIFEST = ROOT / "data" / "fixtures" / "demo_cases_v1.json"
 OUTPUT_DIR = ROOT / "outputs" / "docx" / "step_5_11_qa"
+
+
+def _docx_package_members(data: bytes) -> dict[str, bytes]:
+    """Return logical DOCX members, excluding nondeterministic ZIP metadata."""
+
+    with ZipFile(BytesIO(data)) as package:
+        corrupt_member = package.testzip()
+        if corrupt_member is not None:
+            raise ValueError(f"DOCX package contains a corrupt member: {corrupt_member}")
+        return {
+            name: package.read(name)
+            for name in sorted(package.namelist())
+            if not name.endswith("/")
+        }
 
 
 def main() -> None:
@@ -32,13 +48,18 @@ def main() -> None:
         artifact = build_docx_download(state)
         destination = OUTPUT_DIR / artifact.file_name
         if destination.exists():
-            if destination.read_bytes() != artifact.data:
+            existing_data = destination.read_bytes()
+            if _docx_package_members(existing_data) != _docx_package_members(
+                artifact.data
+            ):
                 raise FileExistsError(
                     "an existing QA document differs; inspect it before replacement"
                 )
+            verified_data = existing_data
         else:
             destination.write_bytes(artifact.data)
-        digest = hashlib.sha256(artifact.data).hexdigest()
+            verified_data = artifact.data
+        digest = hashlib.sha256(verified_data).hexdigest()
         print(
             f"{case['requirement_id']} {state['final_status']} "
             f"{len(artifact.data)} bytes sha256={digest}"

@@ -33,7 +33,7 @@ See the [verified RFP-002 architecture snapshot](docs/architecture_execution_rfp
 
 For a short walkthrough, use the [five-minute demo script and credential-safe recording checklist](docs/demo_script_and_recording_checklist_v1.md). The recording is user-owned and is not included in this repository.
 
-The [project report PDF](docs/Enterprise_RFP_Response_Orchestrator_Project_Report.pdf) follows the assignment-report format of the companion portfolio project. It is a submission draft until Steps 5.17-5.19 and the user-owned recording are complete; its offline build source is [`scripts/build_project_report.py`](scripts/build_project_report.py).
+The [final project report PDF](docs/Enterprise_RFP_Response_Orchestrator_Project_Report.pdf) follows the assignment-report format of the companion portfolio project. Its claims were checked against the frozen evaluation artifacts in the [final evidence-to-claim audit](docs/final_claim_audit_v1.md). The optional user-owned recording is not included in this repository; the report's offline build source is [`scripts/build_project_report.py`](scripts/build_project_report.py).
 
 Product and Security/Compliance use hybrid dense + BM25/sparse retrieval, each capped at Top 5. Implementation uses dense semantic Top 5 in the provider path; the offline UI uses a deterministic semantic substitute for repeatable tests. All searches are domain-locked. A claim has a Boolean `supported` value; a specialist response aggregates its claims as `SUPPORTED`, `PARTIAL`, or `UNSUPPORTED`. Evidence IDs and source lifecycle/authority metadata travel with cited claims.
 
@@ -93,7 +93,7 @@ Missing FedRAMP evidence, an archived TLS source, conflicting current retention 
 
 The UI and DOCX carry the same prominent warning: this is a synthetic demonstration, produces drafts for human review, and is not authorized to make legal, commercial, security-exception, roadmap, or customer-specific contractual commitments. Errors shown in the UI are sanitized; raw provider messages, credentials, and tracebacks are not displayed. Keep `.env` private and never add real customer material to this repository.
 
-The [Git and credential hygiene review](docs/git_hygiene_v1.md) records the current ignore rules and the local Git-tool limitation. Ignoring a file is not a substitute for checking the staged file list before any future commit.
+The [Git and credential hygiene review](docs/git_hygiene_v1.md) records the ignore rules, bounded secret scans, public-source publication check, and final release freeze. Ignoring a file is not a substitute for checking the staged file list before any future commit.
 
 ## Evaluation method and measured result
 
@@ -157,4 +157,4 @@ A future version would address those gates first, then add durable checkpointing
 | `outputs/` | Local generated artifacts, raw evaluation runs, and QA files; Git-ignored. |
 | [`PROJECT_JOURNAL.md`](PROJECT_JOURNAL.md) | Chronological build decisions, errors, approvals, and verification evidence. |
 
-For the next bounded build step, see [Current Status](planning/BUILD_PLAN.md#152-current-status--next-step).
+The required V1 build is complete and frozen as release `v0.1.0`. See [Current Status](planning/BUILD_PLAN.md#152-current-status--next-step) for the final verification record.

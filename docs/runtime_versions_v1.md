@@ -32,7 +32,10 @@ That installation may access the package index; it was **not run** for this
 snapshot. It does not call OpenAI, Pinecone, or LangSmith. Do not run it in
 the already-working `.venv` merely to inspect versions. In an activated
 environment, use `python --version` and `python -m pip check` for a basic
-runtime check. A full rerun of tests and startup is reserved for Step 5.17.
+runtime check. Step 5.17 completed that check on September 22, 2026: 1,309
+tests passed, Ruff and `pip check` passed, the saved evaluation reports
+regenerated deterministically, and a fresh local Streamlit server returned
+HTTP 200.
 
 This is a **direct-dependency constraint snapshot, not a complete lockfile**:
 transitive packages, hashes, package-index state, platform-specific wheels,

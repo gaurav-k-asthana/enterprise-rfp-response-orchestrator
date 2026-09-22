@@ -1,0 +1,58 @@
+{
+  "format_version": 1,
+  "release": "v0.1.0",
+  "release_date": "2026-09-22",
+  "repository": "https://github.com/gaurav-k-asthana/enterprise-rfp-response-orchestrator",
+  "release_scope": "synthetic_portfolio_prototype",
+  "production_readiness_claimed": false,
+  "provider_calls_during_release_checks": 0,
+  "verification": {
+    "pytest": "1312 passed",
+    "ruff": "All checks passed!",
+    "pip_check": "No broken requirements found.",
+    "streamlit_clean_start_http_status": 200,
+    "reviewed_docx_count": 5,
+    "project_report_pages": 11
+  },
+  "artifacts": [
+    {
+      "path": "README.md",
+      "sha256": "7618b6a2de34b77604ad974da0fca68f53f57dcd9ce2e47701616e57a11b5b9a"
+    },
+    {
+      "path": "docs/Enterprise_RFP_Response_Orchestrator_Project_Report.pdf",
+      "sha256": "33aae064383a5d74ed076a4ea946b854c50557c5e1a5c0137cd4a7eb9d78d878"
+    },
+    {
+      "path": "docs/final_claim_audit_v1.md",
+      "sha256": "c1751853d087e396a489c51aae8aaa0d379498c3cfe8f8db09bc7bde62d74e44"
+    },
+    {
+      "path": "docs/evaluation_metrics_v1.md",
+      "sha256": "4a2a3995d124ac568787b157bcce49563658ab003307985f193041ca0a23eebe"
+    },
+    {
+      "path": "data/evaluation/evaluation_cases_v1.json",
+      "sha256": "2debbe188b735ea7eddde3fc7c4008d92e1e920d421e70e2419d6106cf4eae2e"
+    },
+    {
+      "path": "data/evaluation/provider_evaluation_final_approval_step_4_g8.json",
+      "sha256": "a73b1feef944206fdea7eec101433def106f55ba369985982227f9df5feb7a69"
+    },
+    {
+      "path": "docs/architecture_execution_rfp002.png",
+      "sha256": "ce9ad3bdda019c5892565b136883e7468f653855aec1c677cb21936ffd2af8f9"
+    }
+  ],
+  "local_git_ignored_evaluation_evidence": {
+    "analysis_json_path": "outputs/evaluation/provider_evaluation_final_step_4_g8.json",
+    "analysis_json_sha256": "84edc4919789043e30dc6c78b672475627c5906f515af238faf78ac4bb61bca8",
+    "analysis_markdown_path": "outputs/evaluation/provider_evaluation_final_step_4_g8.md",
+    "analysis_markdown_sha256": "fd2e20fa430248463c3267f29c5cde663cc8230c9b5cb7ffbd31a77faf2f9a08"
+  },
+  "interpretation": {
+    "bounded_preference": "single_generalist_for_frozen_v1",
+    "repeat_variability": "inconclusive_due_to_budget_censoring",
+    "universal_architecture_superiority_claimed": false
+  }
+}

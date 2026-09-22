@@ -52,10 +52,11 @@ streams found none of the listed prefixes. This is a bounded pattern scan,
 not a guarantee against all possible sensitive data.
 
 The user reviewed and approved the staged paths, including the journal and
-draft report. On September 22, VS Code authenticated with GitHub and published
+project report. On September 22, VS Code authenticated with GitHub and published
 `main` to the existing public repository. A remote read verified that
-`refs/heads/main` exactly matched local commit `f89196e`. No release tag has
-been created; the separate Step 5.19 release freeze remains pending.
+`refs/heads/main` exactly matched local commit `f89196e`. The later Step 5.19
+review repeated the staged-path and bounded secret checks before freezing and
+publishing release tag `v0.1.0`.
 
 No ignored credential, virtual-environment, raw-output, or Streamlit-secret
 path was published. Keep `.env` closed during screen recording even though it

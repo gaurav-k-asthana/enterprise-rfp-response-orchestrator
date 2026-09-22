@@ -2052,10 +2052,44 @@ Five approval-focused tests cover exact artifact binding, bounded-claim preserva
 - [x] **5.14** Prepare a five-minute-or-less demo script and credential-safe recording checklist.
 - [x] **5.15** Pin or record the final runtime and direct dependency versions.
 - [x] **5.16** Verify `.env`, caches, credentials, local outputs, and sensitive traces are excluded from Git.
-- [ ] **5.17** Run the complete test, lint, evaluation-regeneration, and clean-start checks.
-- [ ] **5.18** Review final claims against saved evidence and raw results.
-- [ ] **5.19** Tag or otherwise freeze the final reviewed local release.
-- [ ] **5.20** Close the journal and Current Status without adding post-submission architecture simplification analysis.
+- [x] **5.17** Run the complete test, lint, evaluation-regeneration, and clean-start checks.
+- [x] **5.18** Review final claims against saved evidence and raw results.
+- [x] **5.19** Tag or otherwise freeze the final reviewed local release.
+- [x] **5.20** Close the journal and Current Status without adding post-submission architecture simplification analysis.
+
+#### Steps 5.17-5.20 completion - final verification, evidence audit, and release freeze
+
+The September 22 release verification regenerated every final provider-derived
+evaluation artifact from the saved raw archives without a provider call. The
+approved final JSON and Markdown retained SHA-256 values
+`84edc4919789043e30dc6c78b672475627c5906f515af238faf78ac4bb61bca8`
+and `fd2e20fa430248463c3267f29c5cde663cc8230c9b5cb7ffbd31a77faf2f9a08`.
+The five reviewed DOCX packages retained their original logical contents and
+hashes. A verifier regression was corrected so harmless DOCX ZIP timestamps
+cannot be mistaken for changed document content. A fresh Streamlit process on
+localhost returned HTTP 200 and was stopped cleanly. The Step 5.17 suite
+passed 1,309 tests; after the release-audit tests were added, the final suite
+passed 1,312 tests. Ruff reported `All checks passed!` and `pip check`
+reported no broken requirements.
+
+`docs/final_claim_audit_v1.md` checks every material README, metrics-page, and
+report claim against implementation, tests, the frozen 24-case set, the human
+approval record, and the locally retained raw/derived evaluation evidence. It
+keeps the bounded single-generalist preference, all failures, repeat-censoring
+warning, zero conflict-detection F1, known implementation gaps, and
+non-production boundary visible. Its SHA-256 is
+`c1751853d087e396a489c51aae8aaa0d379498c3cfe8f8db09bc7bde62d74e44`.
+The final 11-page PDF was regenerated, rendered page by page, and visually
+inspected; its SHA-256 is
+`33aae064383a5d74ed076a4ea946b854c50557c5e1a5c0137cd4a7eb9d78d878`.
+
+`docs/release_manifest_v0.1.0.json` binds the submission artifacts and release
+checks; its SHA-256 is
+`6e369572f7bae1c09dcf965715beb232da8a344e506f102fbce533a4129ad729`.
+The reviewed source state is frozen by annotated Git tag `v0.1.0` and
+published to the existing `origin`. This is the final required V1 build state.
+The optional user-owned recording is not a source-release dependency. No
+post-submission architecture simplification analysis was performed or added.
 
 #### Phase 5 beginner execution notes
 
@@ -2687,22 +2721,28 @@ Close each decision at the listed roadmap step and record the exact result here 
 | 2. LangGraph orchestration and HITL | ✅ Complete | 25/25 |
 | 3. Streamlit map and DOCX | ✅ Complete | 18/18 |
 | 4. Evaluation and baseline | ✅ Complete | 18/18 |
-| 5. Observability and submission | 🟨 In progress | 16/20 |
-| **Overall** | **🟨 In progress** | **121/125** |
+| 5. Observability and submission | ✅ Complete | 20/20 |
+| **Overall** | **✅ Complete** | **125/125** |
 
 ### 15.2 CURRENT STATUS / NEXT STEP
 
-**Last updated:** 2026-09-16  
-**Current phase:** Phase 5 — Observability, demo hardening, and submission.  
-**Completed:** Phases 0–4 and Steps 5.1–5.16 are complete. The five synthetic demo cases are frozen in a source-bound manifest, the clean-terminal browser walkthrough was confirmed by Gaurav Asthana, all five map/download paths pass offline automated verification, and the README links the architecture capture, approved metrics table, 4:50 demo/recording guide, exact direct-dependency record, current-state Git hygiene report, and supplemental 11-page project report PDF. The report is a submission draft; the user-owned recording has not been made or reviewed. The remaining DOCX visual-QA limitation is recorded in the Step 5.11 note above. Fault paths still fail closed or stop at bounded human review; no unsafe final answer is produced.  
-**Current step:** **5.17 Run the complete test, lint, evaluation-regeneration, and clean-start checks.**  
-**Next action:** Run the final offline regression and artifact-regeneration checks, then verify a clean local startup without invoking providers or overwriting frozen outputs.  
-**Blocked by:** Nothing for Step 5.17. Before any Step 5.19 release commit/tag, the user must resolve the local Git/Xcode prerequisite and review the real staged file list; independent Step 5.16 checks do not replace that review. Stop before starting Step 5.17 until the next user approval to proceed.  
+**Last updated:** 2026-09-22
+
+**Current phase:** Required V1 build complete.
+
+**Completed:** All 125 numbered Build Plan steps are complete. The final offline and release-audit suite passes 1,312 tests; Ruff and dependency integrity pass; saved evaluation evidence regenerates deterministically; the five reviewed DOCX packages retain their reviewed contents; a fresh Streamlit server returns HTTP 200; and the final 11-page report has been rendered and visually inspected. Material public claims are bound to evidence in `docs/final_claim_audit_v1.md`. The reviewed source state is frozen and published as `v0.1.0`; the public repository is submission-ready. The user-owned demo recording remains optional and is not included in the source release. Recorded prototype limitations remain open and are not represented as solved.
+
+**Current step:** None. The required V1 build is closed.
+
+**Next action:** Submit the public repository link and final project report; optionally record the prepared credential-safe demo without changing release claims.
+
+**Blocked by:** Nothing required for source/report submission.
 **Cost boundary:** The approved Phase 4 comparative run exhausted its original 128-call generation ceiling. Frozen cumulative generation usage is 186,958 input tokens and 36,704 output tokens, with a $0.814364 pricing-snapshot estimate that excludes retrieval-provider usage; the original approved dollar ceiling was $5.12. Earlier embedding smoke/ingestion requests and the Pinecone index/upsert are recorded in Phase 1, and later provider retrieval activity is recorded in Phase 4. Steps 5.10–5.16 made no provider requests and authorize no further paid run.  
-**Secret boundary:** Local `.env` is ignored. Credential values and vector values were not displayed or written to source, test output, the Build Plan, journal, dry-run manifest, or upload receipt. Tests block all network connections by default; the manifest also excludes full embedding inputs and absolute source paths.
+**Secret boundary:** Local `.env` is ignored. Credential values and vector values were not displayed or written to source, test output, the Build Plan, journal, dry-run manifest, release manifest, or upload receipt. Tests block all network connections by default; the manifests also exclude full embedding inputs and absolute source paths. The final staged-path and bounded key-pattern review found no live secret or ignored private path.
 
 ### 15.3 Session restart prompt
 
-For the next build session, open this file and `PROJECT_JOURNAL.md`, then say:
-
-> Continue the Enterprise RFP Response Orchestrator from the Current Status in `planning/BUILD_PLAN.md`. Complete only the next unchecked numbered step, show me what changed and what I should observe in VS Code, run the relevant offline checks, update the checkbox and Current Status, and record the build block in `PROJECT_JOURNAL.md`. Wait for my approval before starting another step.
+The required V1 build has no next numbered step. For later maintenance, open
+this file and `PROJECT_JOURNAL.md`, identify a separately authorized change,
+and preserve the frozen `v0.1.0` evidence boundary. Do not perform the excluded
+post-submission architecture simplification analysis as part of this project.
