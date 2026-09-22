@@ -7972,3 +7972,31 @@ and the local commit uses the no-reply email. Sign in to GitHub for VS Code's
 built-in Git support, push `main` to the existing `origin`, then verify the
 public repository before using its link for submission. Steps 5.17-5.19
 remain open; no provider call or file deletion occurred.
+
+# Entry 150 — Public GitHub repository publication verified
+**Date / Build hour:** September 22, 2026 / Build hour 18
+**Stage:** Supplemental publication setup; numbered progress unchanged
+
+**Work performed:**
+- Configured VS Code to use Apple Git at `/usr/bin/git`, reloaded the editor,
+  and used its built-in GitHub authorization flow to publish the existing
+  local `main` branch to the previously created `origin` repository.
+- Repaired one accidental line break in `planning/BUILD_PLAN.md` introduced
+  during the publication walkthrough; no project decision or numbered status
+  changed.
+- Updated the Git-hygiene record to distinguish the successful source
+  publication from the still-pending Step 5.19 release freeze and tag.
+
+**Verification and safety:**
+`git ls-remote --heads origin main` returned
+`f89196e901d7a3a2f2acaada641423ccf8625848`, exactly matching the local `HEAD`
+at publication time. The published history uses the repository-specific
+GitHub no-reply email. The earlier exclusion and bounded key-pattern checks
+remain applicable: `.env`, `.venv/`, `outputs/`, and Streamlit secrets were
+not published. No provider call or file deletion occurred.
+
+**Status and next step:**
+The public source link is now usable:
+`https://github.com/gaurav-k-asthana/enterprise-rfp-response-orchestrator`.
+Step 5.17 remains the next numbered Build Plan step; Steps 5.17-5.19 remain
+open, so this publication is not the final release freeze or tag.
